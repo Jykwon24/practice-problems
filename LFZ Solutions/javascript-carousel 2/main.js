@@ -2,7 +2,7 @@ let carouselImg = document.querySelectorAll('.carousel-img')
 let carouselDot = document.querySelectorAll('.dot')
 
 
-let currentImg = 0
+let currentImage = 0
 
 function targetImg(imgIndex) {
   for (var i = 0; i < carouselImg.length; i++) {
