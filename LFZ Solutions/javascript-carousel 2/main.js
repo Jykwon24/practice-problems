@@ -14,7 +14,7 @@ function targetImg(imgIndex) {
       carouselDot[i].className = 'far fa-circle'
     }
   }
-  currentImg = imgIndex
+  currentImage = imgIndex
 }
 
 function nextImg(index, length) {
@@ -24,14 +24,23 @@ function nextImg(index, length) {
     return index + 1
   }
 }
-function previousImg(index, length) {
 
+function previousImg(index, length) {
+  if (index === 0) {
+    return length
+  } else {
+    return index - 1
+  }
 }
 
 function handleClick(event) {
   if (event.target.matches('.fa-chevron-right')) {
-    targetImg(nextImg(currentImg, carouselImg.length - 1))
-
+    targetImg(nextImg(currentImage, carouselImg.length - 1))
+    return
+  }
+  if (event.target.matches('.fa-chevron-left')) {
+    targetImg(previousImg(currentImage, carouselImg.length - 1))
+    return
   }
 }
 
