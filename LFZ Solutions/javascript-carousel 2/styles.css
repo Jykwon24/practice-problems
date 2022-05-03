@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+img {
+  height: 350px;
+  width: 350px;
+}
+
+ .hidden {
+   display:none
+ }
+
+
+
+.dot-container {
+  display: flex;
+  justify-content: center;
+}
+
+.dot-container > i{
+  margin: .5rem;
+}
