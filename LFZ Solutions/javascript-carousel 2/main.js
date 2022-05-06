@@ -3,6 +3,15 @@ let carouselDot = document.querySelectorAll('.dot')
 
 
 let currentImage = 0
+let timerId;
+
+function autoPlay() {
+  clearTimeout(timerId)
+  timerId = setTimeout(() => {
+    let currentSlide = nextImg(currentImage, carouselImg.length - 1)
+    targetImg(currentSlide)
+  }, 3000)
+}
 
 function targetImg(imgIndex) {
   for (var i = 0; i < carouselImg.length; i++) {
@@ -15,6 +24,7 @@ function targetImg(imgIndex) {
     }
   }
   currentImage = imgIndex
+  autoPlay()
 }
 
 function nextImg(index, length) {
@@ -47,3 +57,5 @@ function handleClick(event) {
 let main = document.querySelector('.main')
 
 main.addEventListener('click', handleClick)
+
+autoPlay()
