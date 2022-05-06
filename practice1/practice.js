@@ -15,12 +15,16 @@ var romanToInt = function (s) {
     let currentInt = romanToInt[s.charAt(i)]
     let nextInt = romanToInt[s.charAt(i + 1)]
 
-    if (currentInt < nextInt) {
-      total += (nextInt - currentInt)
+    if (nextInt) {
+      if (currentInt < nextInt) {
+        total += (nextInt - currentInt)
+        i++
+      } else {
+        total += currentInt
+      }
     } else {
       total += currentInt
     }
-
   }
   return total
 };
