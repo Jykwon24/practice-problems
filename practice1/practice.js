@@ -1,3 +1,5 @@
+// Roman to Int
+
 var romanToInt = function (s) {
   const romanToInt = {
     I: 1,
@@ -28,3 +30,21 @@ var romanToInt = function (s) {
   }
   return total
 };
+
+
+// 383 Ransom Note
+
+var canConstruct = function (ransomNote, magazine) {
+  if (magazine.length < ransomNote.length) {
+    return false
+  }
+  for (let letter of ransomNote) {
+    if (!magazine.includes(letter)) {
+      return false
+    } else {
+      magazine = magazine.replace(letter, '')
+    }
+
+  }
+  return true;
+}
